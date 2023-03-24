@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top" style="background-color: #212121;">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <i class="fa-solid fa-phone"></i> <span class="mr-1"> 06.06.06.06.06 </span>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse"  id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/">
+            <i class="fas fa-home mr-1"></i><span> Accueil</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/course">
+            <i class="fa-solid fa-taxi"></i><span> Services</span>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/info/contact">
+            <i class="far fa-question-circle mr-1"></i><span> Contact</span>
+          </a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/account/login">
+            <i class="fa-solid fa-user mr-1"></i> <span> Se connecter</span>
+          </a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link text-white" routerLink="/account/register">
+            <i class="fa-solid fa-user mr-1"></i> S'inscrire
+          </a>
+        </li>
+
+        <li class="nav-item" routerLinkActive="active" (click)="logout()">
+          <a class="nav-link text-white" routerLink="" *ngIf="isConnected ==true">
+            <i class="far fa-user mr-1"></i> Se deconnecter
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>

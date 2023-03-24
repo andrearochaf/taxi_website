@@ -1,0 +1,65 @@
+<div class="image">
+    <div id="booking" class="section">
+        <div class="section-center">
+            <div class="container">
+                <div class="row">
+                    <div class="booking-form">
+                        <div class="booking-bg"></div>
+                        <form (ngSubmit)="estimate()">
+                            <div class="form-header">
+                                <h2>Votre trajet</h2>
+                            </div>
+                            <br>
+                            <!--<div class="form-group">
+                                <input class="form-control" type="text" (keyup)="change($event)" [formControl]="origin"
+                                    id="input" placeholder="Entrer votre adresse de départ" list="possibleAddresses">
+                                    <ol *ngFor="let link of possibleAddresses">
+                                    {{ link }}
+                                    </ol>
+                            </div>-->
+                            <div class="form-group">
+                                <input class="form-control" type="text" ngx-google-places-autocomplete required
+                                (onAddressChange)="handleAddressChangeDepart($event)" placeholder="Adresse de départ">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="text" ngx-google-places-autocomplete required
+                                (onAddressChange)="handleAddressChangeArrivee($event)" placeholder="Adresse de destination">
+                            </div>
+                            <div class="form-group">
+                                <select class="form-control" required id="selectionP" >
+                                    <option value="" label="Nombre de passager(s)" selected="" hidden=""></option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" required type="date"  >
+                                        <span class="form-label">Date du trajet</span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <input class="form-control" required type="time" >
+                                        <span class="form-label">Heure de départ</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-btn">
+                                <button class="submit-btn">Estimation de votre trajet</button>
+                                <br>
+                                <div class="autocomplete-container" id="autocomplete-container"></div>
+                            </div>
+                            <div>
+                                <p>{{this.estimation}}</p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

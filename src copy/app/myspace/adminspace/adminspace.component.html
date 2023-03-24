@@ -1,0 +1,22 @@
+<div class="fw-normal mb-3 pb-3" >
+    <div class="container">
+        <h1>Bonjour {{this.userService.getUsername()}} !</h1>
+        <p>Bienvenue sur votre espace personel</p>  
+        <br>
+        <h5> Vos messages: </h5> 
+        <div class='container'>
+            <div class="row">
+                <div *ngFor='let msg of clientMessages' class="col s6 m4">
+                    <div class="col mb-3">
+                        <div class="card" style="width: 18rem;">
+                            <div class="card-body">
+                                <h5 class="card-title">le {{msg.receivedDate}}, vous avez recu un message de {{msg.transmitterEmail}}:</h5>
+                                <p class="card-text"> {{ msg.message }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

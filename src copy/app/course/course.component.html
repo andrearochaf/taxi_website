@@ -1,0 +1,24 @@
+
+<div class="card m-3">
+    <h5 class="card-header">Nos services</h5>
+    <div class="card-body">
+        <div class='container'>
+            <div class="row">
+                <div *ngFor='let course of _courses' class="col s6 m4">
+                    <div class="col mb-3">
+                        <div class="card" style="width: 18rem;">
+                             <img src="assets/params/images/{{course.lienImage}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{course.name}} :</h5>
+                                <p class="card-text"> {{ course.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

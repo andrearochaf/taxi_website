@@ -1,0 +1,23 @@
+<div class="fw-normal mb-3 pb-3">
+    <div class="container">
+        <h1>Bonjour {{this.userService.getUsername()}} !</h1>
+        <p>Bienvenue sur votre espace personel</p>
+        <br>
+
+        <button class="accordion" (click)="getInfo()">Mes information personelles </button>
+        <div class="panel">
+         <p>
+         </p>
+        </div>
+
+        <button class="accordion">Mes futures réservations</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+
+        <button class="accordion">Mes reservations passées</button>
+        <div class="panel">
+            <p>Lorem ipsum...</p>
+        </div>
+    </div>
+</div>

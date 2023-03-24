@@ -1,0 +1,127 @@
+<section class="vh-100" style="background-color: #eee;">
+  <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-lg-12 col-xl-11">
+        <div class="card text-black" style="border-radius: 25px;">
+          <div class="card-body p-md-5">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+
+                <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">S'enregister</p>
+
+                <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" formControlName="name" placeholder="Nom"
+                        [ngClass]="{ 'is-invalid': submitted && f.name.errors }">
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">last Name is required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" formControlName="firstName" placeholder="Prénom"
+                        [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }">
+                      <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                        <div *ngIf="f.firstName.errors.required">Le prénom est requis</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa-solid fa-envelope fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="email" class="form-control" formControlName="email" placeholder="Email"
+                        [ngClass]="{ 'is-invalid': submitted && f.email.errors }">
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">le mail est requis</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fa-solid fa-phone fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" formControlName="phone" placeholder="Numéro de téléphone"
+                        [ngClass]="{ 'is-invalid': submitted && f.phone.errors }">
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Le numero de téléphone est requis</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="text" class="form-control" formControlName="username" placeholder="Identifiant"
+                        [ngClass]="{ 'is-invalid': submitted && f.username.errors }">
+                      <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+                        <div *ngIf="f.username.errors.required">L'identifiant est requis et doit être unique</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <div class="form-outline flex-fill mb-0">
+                      <input type="password" class="form-control" formControlName="password" placeholder="Mot de passe"
+                        [ngClass]="{ 'is-invalid': submitted && f.password.errors }">
+                      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                        <div *ngIf="f.password.errors.required">Le mot de passe est requis</div>
+                        <div *ngIf="f.password.errors.minlength">Le mot de passe doit contenir au moins 6 charactères</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-check d-flex justify-content-left mb-3">
+                      <input class="form-check-input me-2" type="checkbox" value="false" formControlName="age"
+                        [ngClass]="{ 'is-invalid': submitted && f.age.errors }" />
+                      <label class="form-check-label" for="">J'ai plus de 18 ans</label>
+                      <div class="form-outline flex-fill mb-0">
+                        <div *ngIf="submitted && f.age.errors" class="invalid-feedback">
+                          <div *ngIf="f.age.errors.required">Veuillez cocher cette case</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex flex-row align-items-center mb-4">
+                    <div class="form-check d-flex justify-content-left mb-3">
+                      <input class="form-check-input me-2" type="checkbox" value="false" formControlName="terms"
+                        [ngClass]="{ 'is-invalid': submitted && f.terms.errors }" />
+                      <label class="form-check-label" for="">J'accepte les <a routerLink="/info/conditions">conditions de ventes</a></label>
+                      <div class="form-outline flex-fill mb-0">
+                        <div *ngIf="submitted && f.terms.errors" class="invalid-feedback">
+                          <div *ngIf="f.terms.errors.required">Veuillez cocher cette case</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                    <button [disabled]="loading" class="btn btn-primary">
+                      <span *ngIf="loading" class="spinner-border spinner-border-sm me-1"></span>
+                      S'inscrire
+                    </button>
+                    <a routerLink="/" class="btn btn-link">Annuler</a>
+                  </div>
+
+                </form>
+              </div>
+
+              <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+                <img src="assets/params/images/taxi_nuit.jpg" class="img-fluid" alt="logo">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

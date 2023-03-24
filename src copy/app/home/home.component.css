@@ -1,0 +1,28 @@
+.image {
+    height: 40em;
+    background-size: cover;
+    width: auto;
+    background-image: url('src/assets/params/images/paris.jpg');
+    background-position: 70% 70%;
+}
+
+.section {
+    border-radius: 3em;
+    border: 3px black solid;
+    box-shadow: 6px 6px 20px;
+    position: absolute;
+    top: 6em;
+    left: 65em;
+    width: 23em;
+    text-align: center;
+
+}
+
+.section h2 {
+    text-align: center;
+}
+
+#selectionP {
+    color: #6c757d;
+    opacity: 1;
+}
